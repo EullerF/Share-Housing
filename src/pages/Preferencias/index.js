@@ -21,7 +21,7 @@ export default function Prefencias ({route}) {
   const [animais, setAnimais] = React.useState(true);
   const [atvDomesticas, setAtvD] = React.useState(true);
   const [festas, setFestas] = React.useState(true);
-  const [numMoradores, setNumM] = useState(0);
+  const [numMoradores, setNumM] = useState(2);
   const [media, setMedia] = useState('');
   const [prefer, setPrefer] = useState([]);
   const [universidades, setUniversidades] = useState([])
