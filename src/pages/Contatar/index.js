@@ -117,6 +117,7 @@ export default function Contatar ({route}) {
               <Text style={styles.texto}>Enviar e-mail</Text>
               <FeatherIcon name="mail" size={25} color="#F92E6A" ></FeatherIcon>
             </TouchableOpacity>
+
             </View>
             }
           </View>

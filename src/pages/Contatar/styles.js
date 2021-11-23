@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
    justifyContent: 'flex-start',
    marginHorizontal: 15,
    flexDirection:'column',
-   alignItems:'flex-start',
+   alignItems:'center',
    marginVertical: 12,
    marginTop: 25,
    backgroundColor:'#ffffff',
@@ -43,13 +43,6 @@ const styles = StyleSheet.create({
    borderRadius: 20,
    color:"#333",
  },
-
-textoPrefer: {
-    backgroundColor: '#4f5564' ,
-    padding: 10,
-    borderRadius: 20,
-    color:"#F92E6A",
- },
   iconButton:{
    color:"#ffffff",
    fontSize:16,
@@ -62,20 +55,23 @@ textoPrefer: {
    alignItems:"center",
 
  },
- list:{
-  flex: 1,
-  padding: 10,
+ container2:
+ {
+  justifyContent:'center',
+  flexDirection:"row",
+
  },
  button:{
+  flexDirection:"column",
   backgroundColor: '#4f5564' ,
   padding: 15,
   borderRadius: 50,
-  alignItems: 'center',
-  marginHorizontal: 75,
+  marginHorizontal: 45,
   fontWeight: "bold",
   marginTop: 40,
-  justifyContent:'center',
-  alignContent:'center'
+  justifyContent:'space-around',
+  alignItems:'center'
+
  },
 
  });
