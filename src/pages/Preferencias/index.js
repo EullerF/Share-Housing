@@ -6,7 +6,6 @@ import{useNavigation} from '@react-navigation/native';
 import FeatherIcon from 'react-native-vector-icons/Feather';
 import styles from './styles';
 import { useState, useEffect } from 'react';
-import CheckBox from '@react-native-community/checkbox';
 import { RadioButton } from 'react-native-paper';
 import {Picker} from '@react-native-picker/picker';
 import { View, Text, TextInput, KeyboardAvoidingView,Platform, FlatList, TouchableOpacity } from 'react-native';

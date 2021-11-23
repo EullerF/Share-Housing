@@ -28,6 +28,7 @@ export default function Cadastrar() {
     //let user = userCredential.user;
     const uid = userCredential.user.uid;
     db.collection('estudantes').doc(uid).set({
+    email:email,
     nome: nome,
     curso: curso,
     idade: idade,

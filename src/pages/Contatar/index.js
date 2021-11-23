@@ -18,6 +18,7 @@ export default function Contatar ({route}) {
     idade:'',
     instituicao:'',
     sexo:'',
+    email:'',
   })
   const [preferencias, setPrefer] = useState({
       alcool: false,
@@ -44,10 +45,7 @@ export default function Contatar ({route}) {
           pessoa.instituicao=doc.data().instituicao;
           pessoa.curso=doc.data().curso;
           pessoa.sexo=doc.data().sexo;
-          firebase.auth().getUser(iD).then((user) => {
-            setEmail(user.email);
-            });
-            console.log(email);
+          pessoa.email=doc.data().email;
         }
       });
       if(mounted){
@@ -115,7 +113,7 @@ export default function Contatar ({route}) {
               }
 
             <TouchableOpacity style={styles.button}
-            onPress={() => Linking.openURL('mailto:'+ 'euler.ferreira19@gmail.com')}>
+            onPress={() => Linking.openURL('mailto:'+ pessoa.email)}>
               <Text style={styles.texto}>Enviar e-mail</Text>
               <FeatherIcon name="mail" size={25} color="#F92E6A" ></FeatherIcon>
             </TouchableOpacity>
