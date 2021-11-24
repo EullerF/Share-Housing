@@ -17,6 +17,7 @@ export default function Perfil ({route}) {
   const [idade, setIdade] = useState(route.params.idade);
   const [instituicao, setinstituicao] = useState(route.params.inst);
   const [sexo, setSexo] = useState(route.params.sexo);
+  const [email, setEmail] = useState(route.params.email);
   const navigation = useNavigation ();
   const [prefer, setPrefer] = useState([]);
   const iD = route.params.idUser;
@@ -134,7 +135,7 @@ export default function Perfil ({route}) {
       </View>
       <View>
       <TouchableOpacity style={styles.buttonUser}
-      onPress = {() => {navigation.navigate('User', {idUser:route.params.idUser,nome:nome});}}>
+      onPress = {() => {navigation.navigate('User', {idUser:route.params.idUser,email:email,nome:nome});}}>
       <Text style={styles.textoPrefer}>E-mail/Senha</Text>
       </TouchableOpacity>
       </View>

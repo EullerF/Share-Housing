@@ -34,6 +34,7 @@ export default function App({route}){
     idade:'',
     instituicao:'',
     sexo:'',
+    email:'',
 
   })
   const iD = route.params.idUser;
@@ -54,6 +55,7 @@ export default function App({route}){
           user.instituicao=doc.data().instituicao;
           user.curso=doc.data().curso
           user.sexo=doc.data().sexo
+          user.email=doc.data().email
         }
       });
       if(mounted){
@@ -70,7 +72,7 @@ const navigation = useNavigation ();
   return (
 <Container>
     <ContainerOpt>
-    <ButtonOpt onPress = {() => {navigation.navigate('Perfil', {idUser:route.params.idUser, curso:user.curso, idade:user.idade, inst:user.instituicao, nome:user.nome,sexo:user.sexo});}}>
+    <ButtonOpt onPress = {() => {navigation.navigate('Perfil', {idUser:route.params.idUser, curso:user.curso, idade:user.idade, inst:user.instituicao, nome:user.nome,sexo:user.sexo,email:user.email});}}>
     <FeatherIcon name="user" size={22} color="#F92E6A" />
     </ButtonOpt>
     </ContainerOpt>
