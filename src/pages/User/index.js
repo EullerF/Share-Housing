@@ -8,7 +8,7 @@ import { View, Text, TextInput, KeyboardAvoidingView,Platform, FlatList, Touchab
 import {routers} from '../navigationRouters'
 
 
-export default function Perfil ({route}) {
+export default function User ({route}) {
 
   const db = firebase.firestore();
   const [estudantes, setEstudante] = useState([]);
@@ -132,12 +132,7 @@ export default function Perfil ({route}) {
       </TouchableOpacity>
       }
       </View>
-      <View>
-      <TouchableOpacity style={styles.buttonUser}
-      onPress = {() => {navigation.navigate('User', {idUser:route.params.idUser,nome:nome});}}>
-      <Text style={styles.textoPrefer}>E-mail/Senha</Text>
-      </TouchableOpacity>
-      </View>
+
       {prefer.length === 0
       ?
       <View>
@@ -150,7 +145,7 @@ export default function Perfil ({route}) {
       <View>
       <TouchableOpacity style={styles.buttonPrefer}
       onPress = {() => {navigation.navigate('PreferenciasE', {idUser:route.params.idUser,nome:nome,alcool:userP.alcool,animais:userP.animais,atv_domesticas:userP.atv_domesticas,festas:userP.festas,media:userP.media,num_moradores:userP.num_moradores});}}>
-      <Text style={styles.textoPrefer}>Prefencias</Text>
+      <Text style={styles.textoPrefer}>Editar Prefencias</Text>
       </TouchableOpacity>
       </View>
       }

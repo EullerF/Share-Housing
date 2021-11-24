@@ -10,6 +10,7 @@ import Header from './components/Header/index';
 import Contatar from './pages/Contatar/index';
 import Login from './pages/Login/index';
 import Perfil from './pages/Perfil/index';
+import User from './pages/User/index';
 import Preferencias from './pages/Preferencias/index';
 import PreferenciasE from './pages/PreferenciasE/index';
 import Cadastrar from './pages/Cadastrar/index';
@@ -78,6 +79,16 @@ export default function Routes()
        <Stack.Screen
        name = "Preferencias"
        component={Preferencias}
+       options={{
+         headerTransparent: true,
+         headerShown: false,
+         // eslint-disable-next-line react/display-name
+       }}
+       />
+
+      <Stack.Screen
+       name = "User"
+       component={User}
        options={{
          headerTransparent: true,
          headerShown: false,
