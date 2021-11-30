@@ -13,12 +13,33 @@ import foto from '../../assets/foto.jpeg';
 export default function User() {
 
   const navigation = useNavigation ();
+  const [Rsenha, setRsenha] = useState(false);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errorLogin, setError] = useState({
     isVisible: false,
     message: '',
   })
+
+  function limpaEstado() {
+    setRsenha(false);
+    setEmail('');
+    setPassword('');
+    setError(false);
+  }
+
+  function ResetSenha (email) {
+
+    firebase.auth().sendPasswordResetEmail(email)
+    .then(() => {
+      setRsenha(true);
+    })
+    .catch((error) => {
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      // ..
+    });
+  }
 
   const loginFirebase = () =>{
 
@@ -27,6 +48,7 @@ export default function User() {
     // Signed in
     let user = userCredential.user;
       navigation.navigate("List", {idUser:user.uid,mail:user.email});
+      limpaEstado();
     // ...
   })
   .catch((error) => {
@@ -98,10 +120,38 @@ export default function User() {
       </TouchableOpacity>
       }
 
+      {email === ""
+      ?
+      <View>
+      <TouchableOpacity disabled={true} style={styles.buttonPrefer}
+      onPress={()=>{
+        ResetSenha(email)
+      }}>
+      <Text style={styles.texto2}>Redefinir senha por e-mail</Text>
+      </TouchableOpacity>
+      </View>
+      :
+      <View>
+      <TouchableOpacity style={styles.buttonPrefer}
+      onPress={()=>{
+        ResetSenha(email)
+      }}>
+      <Text style={styles.texto}>Redefinir senha por e-mail</Text>
+      </TouchableOpacity>
+      </View>
+      }
+      {Rsenha === true
+      ?
+      <View style={styles.contentAlert}>
+      <Text> E-mail enviado </Text>
+      </View>
+      :
+      <View/>
+      }
       <TouchableOpacity style={styles.botao}>
         <Text
         style={styles.texto}
-        onPress={()=>{navigation.navigate('Cadastrar')}}
+        onPress={()=>{navigation.navigate('Cadastrar'),limpaEstado()}}
         >Cadastrar</Text>
       </TouchableOpacity>
     </KeyboardAvoidingView>

@@ -51,13 +51,13 @@ const styles = StyleSheet.create({
   },
   texto: {
     backgroundColor: '#4f5564' ,
-    padding: 10,
+    padding: 6,
     borderRadius: 20,
     color:"#F92E6A",
   },
   texto2: {
     backgroundColor: '#4f5564' ,
-    padding: 10,
+    padding: 6,
     borderRadius: 20,
     color:"#333",
   },
@@ -86,6 +86,16 @@ const styles = StyleSheet.create({
   marginRight:"auto",
   fontSize: 16,
   marginVertical: 10
+  },
+
+  buttonPrefer:{
+   backgroundColor: '#4f5564' ,
+   borderRadius: 40,
+   alignItems: 'center',
+   marginHorizontal: 40,
+   fontWeight: "bold",
+   marginTop: 20,
+   flexDirection: "column-reverse",
   },
   contentAlert:{
     marginTop:20,

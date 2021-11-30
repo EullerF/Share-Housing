@@ -82,20 +82,27 @@ margin-top: auto;
 padding: 2px;
 `;
 
-
-export const PPrice = styled.Text`
+export const PercentContainer = styled.View`
+flex-direction: row-reverse;
+align-items: center;
+justify-content: space-between;
+margin-top: auto;
+top: -20px;
+padding: -10px 25px -10px;
+`;
+export const Percent = styled.Text`
 color: #f3f9ff;
 font-size: 14px;
 font-weight: bold;
-left: 5px;
 `;
 
 export const Button = styled.TouchableOpacity`
-background: #4f5564;
-padding: 2px 4px;
-border-radius: 100px;
-align-items: center;
+background: #333;
+border-radius: 50px;
 flex-direction: row;
+align-items: center;
+justify-content: space-between;
+padding: 15px 15px;
 `;
 
 export const ButtonText = styled.Text`

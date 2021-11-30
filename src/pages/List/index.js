@@ -3,13 +3,13 @@ import {
   Container,
   PContainer,
   Person,
-  Button,
+  PercentContainer,
   DadosContainer,
   Pinfo,
+  Button,
   PList,
-  PPrice,
+  Percent,
   PName,
-  ButtonText,
   ContainerOpt,
   ButtonOpt,
 } from './styles';
@@ -119,23 +119,28 @@ export default function App({route}){
           var percent = 0;
           if(pf.alcool == prefer.alcool)
           {
-            percent=percent+1;
+            percent=percent+20;
           }
           if(pf.festas==prefer.festas)
           {
-            percent=percent+1;
+            percent=percent+20;
           }
           if(pf.animais == prefer.animais)
           {
-            percent=percent+1;
+            percent=percent+20;
           }
           if(pf.atv_domesticas == prefer.atv_domesticas)
           {
-            percent=percent+1;
+            percent=percent+20;
           }
-          if(percent>=2)
+          if(pf.media == prefer.media)
           {
-            list1.push({id:pf.id});
+            percent=percent+20;
+          }
+          if(percent>=60)
+          {
+
+            list1.push({id:pf.id,percent:percent});
           }
 
         });
@@ -150,7 +155,7 @@ export default function App({route}){
     {
       if(a.id==b.id)
       {
-        ArrayFinal.push(b);
+        ArrayFinal.push({id:b.id,nome:b.nome,curso:b.curso,idade:b.idade,instituicao:b.instituicao,email:b.email,sexo:b.sexo,percent:a.percent});
         //console.log(ArrayFinal);
       }
     }
@@ -192,6 +197,10 @@ const navigation = useNavigation ();
     </ButtonOpt>
     </ContainerOpt>
   <PContainer>
+    {listaFiltrada.length===0
+    ?
+    <Percent>Nenhum perfil compativel</Percent>
+    :
     <PList
     data={listaFiltrada}
     keyExtractor={(item) => item.id}
@@ -209,9 +218,15 @@ const navigation = useNavigation ();
         <Pinfo>Idade: {item.idade}</Pinfo>
         <Pinfo>Sexo: {item.sexo}</Pinfo>
         </DadosContainer>
+        <PercentContainer>
+          <Button>
+          <Percent>{item.percent}%</Percent>
+          </Button>
+        </PercentContainer>
       </Person>
     )}
     />
+  }
   </PContainer>
 
 </Container>
