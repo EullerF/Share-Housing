@@ -83,8 +83,8 @@ textoPrefer: {
    fontWeight:"bold",
   },
   contentAlert:{
-   marginTop:20,
-   flexDirection:"row",
+   marginTop:10,
+   flexDirection:"column",
    justifyContent:"center",
    alignItems:"center",
 

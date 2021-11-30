@@ -31,6 +31,7 @@ export default function User ({route}) {
     db.collection("estudantes").doc(iD).update({
       email: email,
     })
+    navigation.navigate('List')
   }).catch((error) => {
     console.log('Não foi');
     setError(true)
@@ -52,6 +53,14 @@ function ResetSenha () {
   });
 }
 
+function logout() {
+
+  firebase.auth().signOut().then(() => {
+  navigation.navigate('Login')
+  }).catch((error) => {
+    // An error happened.
+  });
+}
   return (
   <KeyboardAvoidingView
   behavior={Platform.OS=="ios" ? "padding" : "height"}
@@ -66,12 +75,16 @@ function ResetSenha () {
       {errorLogin === true
       ?
       <View style={styles.contentAlert}>
-      <Text> Faça Login novamente para poder alterar o e-mail </Text>
+      <Text> Alteração negada, talvez você precise fazer login novamente antes de alterar o e-mail </Text>
+      <TouchableOpacity style={styles.buttonPrefer}
+      onPress={()=>{
+        logout()
+      }}>
+      <Text style={styles.textoPrefer}>Logout</Text>
+      </TouchableOpacity>
       </View>
       :
-      <View style={styles.contentAlert}>
-      <Text> Editado com sucesso </Text>
-      </View>
+      <View/>
       }
       <View>
       <TouchableOpacity style={styles.buttonPrefer}

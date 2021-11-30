@@ -36,7 +36,7 @@ export default function Prefencias ({route}) {
       media: media,
       num_moradores: numMoradores,
       })
-      navigation.navigate("List",{idUser:iD});
+      navigation.navigate("List",{idUser:iD,contador:true});
       }
 
 

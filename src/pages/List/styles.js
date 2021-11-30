@@ -1,5 +1,6 @@
 import styled from 'styled-components/native';
 import { FlatList } from 'react-native';
+import { StyleSheet } from 'react-native'
 
 export const Container = styled.SafeAreaView`
   flex: 1;
@@ -105,3 +106,24 @@ font-size: 12px;
 text-transform: uppercase;
 
 `;
+
+
+const styles = StyleSheet.create({
+  texto2: {
+    backgroundColor: '#4f5564' ,
+    padding: 3,
+    borderRadius: 20,
+    color:"#333",
+  },
+   buttonNew:{
+    backgroundColor: '#4f5564' ,
+    padding: 5,
+    borderRadius: 40,
+    alignItems: 'center',
+    marginHorizontal: 40,
+    fontWeight: "bold",
+    marginTop:20
+  }
+});
+
+export default styles

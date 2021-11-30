@@ -31,7 +31,7 @@ export default function PrefenciasE ({route}) {
       media: media,
       num_moradores: numM,
       })
-      navigation.navigate("List",{idUser:iD});
+      navigation.navigate("List",{idUser:iD,contador:true});
       }
 
     return  <KeyboardAvoidingView
