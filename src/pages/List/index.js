@@ -32,7 +32,7 @@ export default function App({route}){
   const [preferCompativel, setpreferCompativel] = useState([])
   const [listaFiltrada, setListaFiltrada]= useState([])
   const [counter,setCounter] = useState(0);
-  const [edit,setEdit] = useState(false);
+  const [load,setLoad] = useState(true)
   const [user, setUser] = useState({
     nome:'',
     curso:'',
@@ -176,18 +176,18 @@ setTimeout(()=>{
     console.log('Chamou a função de filtro');
     setCounter(counter + 1);
   }
-  if(route.params.contador==true && edit==true)
-  {
-    setCounter(counter+1)
-    setEdit(false)
-  }
 },2000)
+
+useEffect(()=>{
+setCounter(0);
+navigation.addListener('focus', ()=>setLoad(!load))
+},[load, navigation])
 
 const navigation = useNavigation ();
   return (
 <Container>
     <ContainerOpt>
-    <ButtonOpt onPress = {() => {navigation.navigate('Perfil', {idUser:route.params.idUser, curso:user.curso, idade:user.idade, inst:user.instituicao, nome:user.nome,sexo:user.sexo,email:user.email}) , setEdit(true);}}>
+    <ButtonOpt onPress = {() => {navigation.navigate('Perfil', {idUser:route.params.idUser, curso:user.curso, idade:user.idade, inst:user.instituicao, nome:user.nome,sexo:user.sexo,email:user.email});}}>
     <FeatherIcon name="user" size={22} color="#F92E6A" />
     </ButtonOpt>
     </ContainerOpt>
