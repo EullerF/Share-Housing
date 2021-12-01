@@ -68,6 +68,7 @@ function logout() {
 
       <View>
       <TextInput
+      keyboardType = 'email-address'
       style={styles.input}
       value={email}
       onChangeText={(value) => setEmail(value)}

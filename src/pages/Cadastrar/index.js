@@ -62,6 +62,7 @@ return(
         label="Email"
         placeholder= "Digite seu e-mail"
         type="text"
+        keyboardType = 'email-address'
         value={email}
         style={styles.input}
         onChangeText={(value) => setEmail(value)}
@@ -76,12 +77,14 @@ return(
       />
       <TextInput
       style={styles.input}
-      placeholder="Nome Completo"
+      placeholder="Nome e o ùltimo sobrenome"
       onChangeText={setNome}
       value={nome}
+      maxLength={18}
       />
       <TextInput
       style={styles.input}
+      maxLength={2}
       placeholder="Idade"
       keyboardType = 'number-pad'
       type="number"
@@ -93,6 +96,7 @@ return(
       placeholder="Curso"
       onChangeText={setCurso}
       value={curso}
+      maxLength={25}
       />
 
       <View style={styles.containerPic}>

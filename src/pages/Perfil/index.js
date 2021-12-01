@@ -74,17 +74,20 @@ export default function Perfil ({route}) {
       <TextInput
       style={styles.input}
       value={nome}
+      maxLength={18}
       onChangeText={(value) => setNome(value)}
       />
       <TextInput
       style={styles.input}
       value={idade}
+      maxLength={2}
       keyboardType = 'number-pad'
       onChangeText={(value) => setIdade(value)}
       />
       <TextInput
       style={styles.input}
       value={curso}
+      maxLength={25}
       onChangeText={(value) => setCurso(value)}
       />
       <View style={styles.containerPic}>

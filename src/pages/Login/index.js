@@ -83,6 +83,7 @@ export default function User() {
         label="Email"
         placeholder= "Digite seu e-mail"
         type="text"
+        keyboardType = 'email-address'
         value={email}
         style={styles.input}
         onChangeText={(value) => setEmail(value)}

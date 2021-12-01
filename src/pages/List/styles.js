@@ -30,7 +30,7 @@ export const ContainerOpt = styled.View`
   top: 5px;
   background: #333;
   right: 5px;
-  padding: 2px 2px;
+  padding: 5px 5px;
   border-radius: 50px;
   align-items: flex-end;
   flex-direction: column;
