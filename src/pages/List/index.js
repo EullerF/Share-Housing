@@ -32,7 +32,8 @@ export default function App({route}){
   const [preferCompativel, setpreferCompativel] = useState([])
   const [listaFiltrada, setListaFiltrada]= useState([])
   const [counter,setCounter] = useState(0);
-  const [load,setLoad] = useState(true)
+  const [load,setLoad] = useState(true);
+  const [primeiro,setPrimeiro] = useState(false);
   const [user, setUser] = useState({
     nome:'',
     curso:'',
@@ -57,8 +58,6 @@ export default function App({route}){
     let mounted = true;
     const list = [];
     db.collection("estudantes").onSnapshot((query) => {
-
-
       query.forEach((doc) => {
         if(doc.id!=iD){
         list.push({ ...doc.data(), id: doc.id });
@@ -78,17 +77,17 @@ export default function App({route}){
     if(mounted){
       setEstudantes(null);
       setEstudantes(list);
-      //console.log(estudantes);
+      setPrimeiro(true);
     }
+    navigation.addListener('focus', ()=>setLoad(!load))
     return () => mounted = false;
-  }, []);
+  },[load, navigation])
 
   useEffect(()=>{
          let mounted = true;
          const list = [];
         //Pega todas as preferencias dos estudantes e separa a preferencias do User logado
         db.collection("preferencias").onSnapshot((query) => {
-
 
           query.forEach((doc) => {
             if(doc.id!=iD){
@@ -115,6 +114,7 @@ export default function App({route}){
 
           //Filtro de preferencias
           const list1 = [];
+          if(prefer.media!=''){
           preferEstudantes.forEach((pf)=>{
           var percent = 0;
           if(pf.alcool == prefer.alcool)
@@ -169,6 +169,7 @@ export default function App({route}){
       setCounter(2);
       console.log('----');
       }
+    }
         }
         return () => mounted = false;
   },[counter]);
@@ -181,7 +182,7 @@ setTimeout(()=>{
     console.log('Chamou a função de filtro');
     setCounter(counter + 1);
   }
-},2000)
+},1500)
 
 useEffect(()=>{
 setCounter(0);
@@ -199,11 +200,18 @@ const navigation = useNavigation ();
   <PContainer>
     {listaFiltrada.length===0
     ?
-    <Percent>Nenhum perfil compativel</Percent>
+    <View>
+    <Percent>Analisando perfis compativeis</Percent>
+    {prefer.media==='' && prefer.num_moradores===1 && primeiro===true
+    ?
+    <Percent>Verifique suas preferencias</Percent>
+    :
+    <View/>
+    }
+    </View>
     :
     <PList
     data={listaFiltrada}
-    keyExtractor={(item) => item.id}
     ListFooterComponent={<View/>}
     ListFooterComponentStyle={{
       height: 80,

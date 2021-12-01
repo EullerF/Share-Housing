@@ -13,13 +13,24 @@ export default function Cadastrar() {
   const [idade, setIdade] = useState('');
   const [instituicao, setinstituicao] = useState('IFTM_UPT');
   const [email, setEmail] = useState('');
-  const [sexo, setSexo] = useState('Masculino');
+  const [sexo, setSexo] = useState('Feminino');
   const [password, setPassword] = useState('');
   const navigation = useNavigation ();
   const [errorLogin, setError] = useState({
     isVisible: false,
     message: '',
   })
+
+  function limpaEstado() {
+    setNome('');
+    setCurso('')
+    setIdade('');
+    setinstituicao('IFTM_UPT')
+    setSexo('Feminino')
+    setEmail('');
+    setPassword('');
+    setError(false);
+  }
 
   //Adicionar estudante + Autenticação
   function addEstudante(){
@@ -98,6 +109,7 @@ return(
         <Picker.Item label="IFTM" value="IFTM" />
         <Picker.Item label="FACTHUS" value="FACTHUS" />
         <Picker.Item label="FAZU" value="FAZU" />
+        <Picker.Item label="UNIPAC" value="UNIPAC" />
       </Picker>
       </View>
 
@@ -137,17 +149,6 @@ return(
       <Text style={styles.texto}>Cadastrar</Text>
       </TouchableOpacity>
       }
-
-      {/*}
-      <TouchableOpacity
-        style={styles.buttonNew}
-        onPress={()=>{
-          addEstudante()
-        }}
-      >
-        <Text style={styles.iconButton}>Cadastrar</Text>
-      </TouchableOpacity>
-      */}
 
     </KeyboardAvoidingView>
   );

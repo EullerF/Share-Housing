@@ -101,6 +101,7 @@ export default function Perfil ({route}) {
         <Picker.Item label="IFTM" value="IFTM" />
         <Picker.Item label="FACTHUS" value="FACTHUS" />
         <Picker.Item label="FAZU" value="FAZU" />
+        <Picker.Item label="UNIPAC" value="UNIPAC" />
       </Picker>
       </View>
 

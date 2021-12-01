@@ -69,7 +69,6 @@ export default function Routes()
        options={{
          headerTransparent: true,
          headerShown: true,
-
          headerTintColor:'#F92E6A',
          // eslint-disable-next-line react/display-name
          headerTitle: () => <Header />
@@ -90,8 +89,10 @@ export default function Routes()
        name = "User"
        component={User}
        options={{
-         headerTransparent: true,
-         headerShown: false,
+        headerTransparent: true,
+         headerShown: true,
+         headerTitle: false,
+         headerTintColor:'#F92E6A',
          // eslint-disable-next-line react/display-name
        }}
        />
