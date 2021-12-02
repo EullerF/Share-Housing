@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "976202805637",
+    "project_id": "tcc2021-33dfe",
+    "storage_bucket": "tcc2021-33dfe.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:976202805637:android:250f7828fdc3f8c037d4ec",
+        "android_client_info": {
+          "package_name": "com.moradia"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "976202805637-u8nhe57u0adnv85rns8l1j0ggav2hcse.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCLhkgoQoCjvnY8ej9p5Q0a0NItTNA_wsE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "976202805637-u8nhe57u0adnv85rns8l1j0ggav2hcse.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

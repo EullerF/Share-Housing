@@ -109,7 +109,7 @@ return(
         <Picker.Item label="IFTM_UPT" value="IFTM_UPT" />
         <Picker.Item label="UFTM_CE" value="UFTM_CE" />
         <Picker.Item label="UFTM_ICTE" value="UFTM_ICTE" />
-        <Picker.Item label="Uniube" value="Uniube" />
+        <Picker.Item label="UNIUBE" value="UNIUBE" />
         <Picker.Item label="IFTM" value="IFTM" />
         <Picker.Item label="FACTHUS" value="FACTHUS" />
         <Picker.Item label="FAZU" value="FAZU" />

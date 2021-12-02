@@ -94,7 +94,16 @@ export const Percent = styled.Text`
 color: #f3f9ff;
 font-size: 14px;
 font-weight: bold;
+text-align: center;
 `;
+
+export const Loading = styled.Text`
+color: #f3f9ff;
+font-size: 18px;
+font-weight: bold;
+margin-top: 30px;
+`;
+
 
 export const Button = styled.TouchableOpacity`
 background: #333;

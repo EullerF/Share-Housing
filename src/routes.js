@@ -17,8 +17,12 @@ import Cadastrar from './pages/Cadastrar/index';
 import Options from './components/Options/index';
 const Stack = createStackNavigator();
 
+
 export default function Routes()
 {
+
+
+
   return(
 
     <NavigationContainer>
@@ -49,8 +53,19 @@ export default function Routes()
             headerLeft: null,
             headerTitle: false,
             // eslint-disable-next-line react/display-name
+            componentDidMount() {
+              BackHandler.addEventListener('hardwareBackPress', this.onBackButtonPressed);
+          },
 
+          componentWillUnmount() {
+              BackHandler.removeEventListener('hardwareBackPress', this.onBackButtonPressed);
+          },
+
+          onBackButtonPressed() {
+              return true;
+          }
           }}
+
        />
        <Stack.Screen
        name = "Contatar"

@@ -12,6 +12,7 @@ import {
   PName,
   ContainerOpt,
   ButtonOpt,
+  Loading,
 } from './styles';
 import styles from "./styles";
 import React, { useRef } from 'react';
@@ -182,7 +183,7 @@ setTimeout(()=>{
     console.log('Chamou a função de filtro');
     setCounter(counter + 1);
   }
-},1500)
+},2000)
 
 useEffect(()=>{
 setCounter(0);
@@ -201,7 +202,7 @@ const navigation = useNavigation ();
     {listaFiltrada.length===0
     ?
     <View>
-    <Percent>Analisando perfis compativeis</Percent>
+    <Loading>Analisando perfis compativeis...</Loading>
     {prefer.media==='' && prefer.num_moradores===1 && primeiro===true
     ?
     <Percent>Verifique suas preferencias</Percent>
