@@ -43,9 +43,9 @@ const styles = StyleSheet.create({
   botao: {
   backgroundColor: '#4f5564' ,
   padding: 10,
-  borderRadius: 40,
+  borderRadius: 50,
   alignItems: 'center',
-  marginHorizontal: 40,
+  marginHorizontal: 75,
   fontWeight: "bold",
   marginTop:20
   },

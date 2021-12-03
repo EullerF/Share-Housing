@@ -13,6 +13,7 @@ import {
   ContainerOpt,
   ButtonOpt,
   Loading,
+  Loading2,
 } from './styles';
 import styles from "./styles";
 import React, { useRef } from 'react';
@@ -201,13 +202,13 @@ const navigation = useNavigation ();
   <PContainer>
     {listaFiltrada.length===0
     ?
-    <View>
+    <View style={styles.containerAleta}>
     <Loading>Analisando perfis compativeis...</Loading>
-    {prefer.media==='' && prefer.num_moradores===1 && primeiro===true
+    {prefer.media==='' && prefer.num_moradores===1 && counter===1
     ?
-    <Percent>Verifique suas preferencias</Percent>
+    <Loading2>Primeiro defina suas preferencias</Loading2>
     :
-    <View/>
+    <Loading2>Ainda não temos perfis compativeis com suas preferencias</Loading2>
     }
     </View>
     :

@@ -149,11 +149,10 @@ export default function User() {
       :
       <View/>
       }
-      <TouchableOpacity style={styles.botao}>
-        <Text
-        style={styles.texto}
-        onPress={()=>{navigation.navigate('Cadastrar'),limpaEstado()}}
-        >Cadastrar</Text>
+      <TouchableOpacity
+      onPress={()=>{navigation.navigate('Cadastrar'),limpaEstado()}}
+      style={styles.botao}>
+      <Text style={styles.texto}>Cadastrar</Text>
       </TouchableOpacity>
     </KeyboardAvoidingView>
   );

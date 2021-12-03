@@ -151,7 +151,7 @@ export default function Prefencias ({route}) {
       </View>
 
 
-      {numMoradores === ""
+      {media === ""
       ?
       <TouchableOpacity
       disabled={true}

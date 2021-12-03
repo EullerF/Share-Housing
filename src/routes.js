@@ -3,7 +3,7 @@ import React from 'react';
 import { NavigationContainer} from '@react-navigation/native';
 import { createStackNavigator} from '@react-navigation/stack';
 import { BackHandler } from 'react-native';
-
+import {useEffect} from 'react';
 
 import List from './pages/List/index';
 import Header from './components/Header/index';
@@ -20,9 +20,11 @@ const Stack = createStackNavigator();
 
 export default function Routes()
 {
-
-
-
+  useEffect(() => {
+    BackHandler.addEventListener('hardwareBackPress', () => true);
+    return () =>
+      BackHandler.removeEventListener('hardwareBackPress', () => true);
+  }, []);
   return(
 
     <NavigationContainer>
@@ -30,6 +32,7 @@ export default function Routes()
       screenOptions={{
         headerShown: true,
         cardStyle: {backgroundColor:'#313746'},
+
       }}
       initialRouteName='Login'
 
@@ -53,17 +56,6 @@ export default function Routes()
             headerLeft: null,
             headerTitle: false,
             // eslint-disable-next-line react/display-name
-            componentDidMount() {
-              BackHandler.addEventListener('hardwareBackPress', this.onBackButtonPressed);
-          },
-
-          componentWillUnmount() {
-              BackHandler.removeEventListener('hardwareBackPress', this.onBackButtonPressed);
-          },
-
-          onBackButtonPressed() {
-              return true;
-          }
           }}
 
        />
@@ -127,8 +119,10 @@ export default function Routes()
        name = "Cadastrar"
        component={Cadastrar}
        options={{
-         headerTransparent: true,
-         headerShown: false,
+        headerTransparent: true,
+        headerShown: true,
+        headerTitle: false,
+        headerTintColor:'#F92E6A',
          // eslint-disable-next-line react/display-name
        }}
        />

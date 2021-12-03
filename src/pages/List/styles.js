@@ -99,9 +99,18 @@ text-align: center;
 
 export const Loading = styled.Text`
 color: #f3f9ff;
-font-size: 18px;
+font-size: 20px;
 font-weight: bold;
 margin-top: 30px;
+text-align: center;
+`;
+
+export const Loading2 = styled.Text`
+color: #F92E6A;
+font-size: 17px;
+font-weight: bold;
+margin-top: 100px;
+text-align: center;
 `;
 
 
@@ -139,7 +148,15 @@ const styles = StyleSheet.create({
     marginHorizontal: 40,
     fontWeight: "bold",
     marginTop:20
-  }
+  },
+  containerAleta:
+  {
+    flexDirection:'column',
+    alignItems:'center',
+    justifyContent:'flex-start',
+    width:'75%',
+
+  },
 });
 
 export default styles
