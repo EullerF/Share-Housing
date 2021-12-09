@@ -80,6 +80,7 @@ export default function User() {
        <Image source={foto} style={styles.foto}/>
       </View>
       <TextInput
+        placeholderTextColor="#ffffff"
         label="Email"
         placeholder= "Digite seu e-mail"
         type="text"
@@ -89,6 +90,7 @@ export default function User() {
         onChangeText={(value) => setEmail(value)}
       />
       <TextInput
+        placeholderTextColor="#ffffff"
         secureTextEntry={true}
         placeholder= "Digite sua senha"
         type="text"

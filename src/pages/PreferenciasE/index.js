@@ -39,7 +39,7 @@ export default function PrefenciasE ({route}) {
     style={styles.container}>
       <View>
       <Text style={styles.label}>Edite suas Prefencias</Text>
-      <Text style={styles.textoR}>Deseja morar com quem consome alcool?</Text>
+      <Text style={styles.textoR}>Deseja morar com quem consome álcool?</Text>
       <View style={styles.containerRadio}>
       <Text> Sim </Text>
         <RadioButton
@@ -67,7 +67,7 @@ export default function PrefenciasE ({route}) {
       />
       </View>
 
-      <Text style={styles.textoR}>Deseja pagar pelas atividades domesticas?</Text>
+      <Text style={styles.textoR}>Deseja pagar pelas atividades domésticas?</Text>
       <View style={styles.containerRadio}>
       <Text> Sim </Text>
         <RadioButton
@@ -81,7 +81,7 @@ export default function PrefenciasE ({route}) {
       />
       </View>
 
-      <Text style={styles.textoR}>Deseja morar com quem frequenta festas com frequencia?</Text>
+      <Text style={styles.textoR}>Deseja morar com quem frequenta festas com frequência?</Text>
       <View style={styles.containerRadio}>
       <Text> Sim </Text>
         <RadioButton
@@ -94,7 +94,7 @@ export default function PrefenciasE ({route}) {
         onPress={() => setFestas(false)}
       />
       </View>
-      <Text style={styles.textoR}>Defina sua média de gastos</Text>
+      <Text style={styles.textoR}>Defina sua média de gastos, em reais:</Text>
       <View style={styles.containerPic}>
         <Picker
         selectedValue={media}

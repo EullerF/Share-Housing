@@ -47,9 +47,11 @@ export default function Cadastrar() {
     sexo: sexo,
     },navigation.navigate("List",{idUser:uid}))
     }).catch((error) => {
-      setError(true)
       let errorCode = error.code;
       let errorMessage = error.message;
+      errorLogin.isVisible(true);
+      errorLogin.message(errorMessage);
+
         // ..
       });
   }
@@ -60,6 +62,7 @@ return(
       <Text style={styles.label}>Insira seus dados</Text>
       <TextInput
         label="Email"
+        placeholderTextColor="#ffffff"
         placeholder= "Digite seu e-mail"
         type="text"
         keyboardType = 'email-address'
@@ -69,7 +72,8 @@ return(
       />
       <TextInput
         secureTextEntry={true}
-        placeholder= "Digite sua senha"
+        placeholderTextColor="#ffffff"
+        placeholder= "Senha com mais 6 caracteres"
         type="text"
         value={password}
         style={styles.input}
@@ -77,12 +81,14 @@ return(
       />
       <TextInput
       style={styles.input}
-      placeholder="Nome e o ùltimo sobrenome"
+      placeholderTextColor="#ffffff"
+      placeholder="Nome e último sobrenome"
       onChangeText={setNome}
       value={nome}
-      maxLength={18}
+      maxLength={22}
       />
       <TextInput
+      placeholderTextColor="#ffffff"
       style={styles.input}
       maxLength={2}
       placeholder="Idade"
@@ -92,6 +98,7 @@ return(
       value={idade}
       />
       <TextInput
+      placeholderTextColor="#ffffff"
       style={styles.input}
       placeholder="Curso"
       onChangeText={setCurso}
@@ -133,7 +140,7 @@ return(
       {errorLogin === true
       ?
       <View style={styles.contentAlert}>
-      <Text> Dados inválidos</Text>
+      <Text> Dados inválidos {errorLogin.message}</Text>
       </View>
       :
       <View/>

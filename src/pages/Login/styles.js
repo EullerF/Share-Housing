@@ -54,12 +54,14 @@ const styles = StyleSheet.create({
     padding: 6,
     borderRadius: 20,
     color:"#F92E6A",
+    fontWeight: "bold"
   },
   texto2: {
     backgroundColor: '#4f5564' ,
     padding: 6,
     borderRadius: 20,
     color:"#333",
+    fontWeight: "bold"
   },
   foto:{
     width: 150,

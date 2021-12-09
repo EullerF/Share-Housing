@@ -97,7 +97,7 @@ export default function Contatar ({route}) {
                 Ter media mensal de gastos: {preferencias.media} reais
               </Text>
               <Text style={styles.dados}>
-               Dividir a residencia com {preferencias.num_moradores} pessoas.
+               Dividir a residência com {preferencias.num_moradores} pessoas.
               </Text>
               {preferencias.atv_domesticas===true
               ?
