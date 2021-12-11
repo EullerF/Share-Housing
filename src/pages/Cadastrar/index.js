@@ -73,7 +73,7 @@ return(
       <TextInput
         secureTextEntry={true}
         placeholderTextColor="#ffffff"
-        placeholder= "Senha com mais 6 caracteres"
+        placeholder= "Senha com mais de 6 caracteres"
         type="text"
         value={password}
         style={styles.input}
